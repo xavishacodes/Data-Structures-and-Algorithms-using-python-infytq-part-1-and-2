@@ -1,0 +1,174 @@
+Lists using array
+When an element is added to an empty list in Python, a block of memory is allocated and element is added at index position 0. The remaining memory is considered to be reserved space which will be used later for addition or insertion of elements.
+
+List using array (addition of elements)
+add(element):
+1. When the list is initially created, it is created with a certain capacity.
+2. While adding the elements, if the list is filled to the capacity,
+   a. Create a new list with increased capacity
+   b. Copy the elements of initial list to the new list
+3. Add the element to the end of the existing elements in the list
+                  
+marias_tuple = ("Tea Bags","Milk")
+marias_lst.extend(marias_tuple)
+In this way, we can add or extend elements to a list.
+
+List using array(insertion of elements at a particular position)
+insert(pos, element):
+ 1. If the list is filled to capacity
+    a. Create a new list with increased capacity
+    b. Copy the elements of initial list to the new list
+ 2. Shift right all the existing elements from index position (pos) by 1 position
+ 3. Insert the element at index position (pos)
+                
+List using array(Deletion of elements at a particular position)
+delete(pos):
+ 1. Shift left all the existing elements from index 
+    position (pos+1) by 1 position
+Note: Capacity will be decreased whenever remaining number 
+of elements fall below certain value
+marias_lst.pop(1) -> This deletes the element at the first position
+
+When we lookup for employees by keying his/her name in a dictionary of an organization,it retrieves the object of all the employee details who have the keyed name in it and stores it in a list before displaying it.
+
+Disadvantage
+When capacity of the array is increased during addition or insertion of elements, it may result in wastage of memory in the form of reserved space.
+As Maria's list is going to have frequent additions and deletions, it may not be a good choice to implement it using arrays. 
+There is one more implementation for list which is using Linked List. Let's explore list using linked list.
+
+
+
+Lists using Linked list
+
+A linked list consists of a group of nodes which together represent a sequence or a list. Each node will have a data part which holds the actual data and an address part which holds the link to the next node. The first node in the list is known as head node and the last node is known as tail node. Unlike array, in linked list, the nodes need not be stored in contiguous memory locations
+
+Creation of Linked List
+class LinkedList:
+    def __init__(self):
+        self.__head=None
+        self.__tail=None
+    def get_head(self):
+        return self.__head
+    def get_tail(self):
+        return self.__tail
+
+Displaying the elements of a linked list by traversing through the elements
+Assume that Maria's list is maintained as a linked list and she wants to traverse through the list and display the items in the list starting from the first item.
+Algorithm steps:
+display()
+1. Call the head node as temp
+2. While temp is not None,
+   a. Display temp’s data
+   b. Make the next node as temp
+
+Adding elements to linked list
+add(data)
+1. Create a new node with the data
+2. If the linked list is empty (head node is not referring to any other node), 
+   make the head node and the tail node refer to the new node
+3. Otherwise,
+   a. Make the tail node’s link refer to new node
+   b. Call the new node as tail node
+
+Use zip function when there is a need to merge two lists or iterate through two lists simultaneously
+
+Inserting Elements in a Linked List at specific Positions
+insert(data,data_before)
+1. Create a new node with the given data
+2. If the data_before is None,
+    a. Make the new node's link refer to head node 
+    b. Call the new node as head node
+    c. If the new node's link is None, make it the tail node
+3. Else
+    a. Find the node with data_before, once found consider it as node_before
+    b. Make the new node’s link refer to node_before’s link.
+    c. Make the node_before’s link refer to new node
+    d. If new node’s link is None, make it the tail node
+4. If node with data_before is not found, display appropriate error message
+
+Deleting Elements from linked list algorithm
+delete(data):
+1. Find the node with the given data. If found,
+   a. If the node to be deleted is head node, make the next node as head node
+      1. If it is also the tail node, make the tail node as None
+   b. Otherwise,
+      1. Traverse till the node before the node to be deleted, call it temp
+      2. Make temp’s link refer to node’s link.
+      3. If the node to be deleted is the tail node, call the temp as tail node
+      4. Make the node's link as None
+2. If the node to be deleted is not found, display appropriate error message
+
+Difference between list using Array and List using Linked list
+
+                              List using Array	                                                                             List using Linked List
+ Insert	 Shifting of elements are required	                                        Shifting of elements are not required
+ Delete	 Shifting of elements are required	                                        Shifting of elements are not required
+ Memory	 Elements are stored in contiguous memory locations	     Elements need not necessarily be stored in contiguous memory locations
+ Access	 Both random and sequential	                                        Only sequential
+
+
+Stack
+ 	This pile of shirts arranged one on top of the other which follows Last-In-First-Out (LIFO) principle is known as Stack.
+ 	
+     Operations possible on the stack are:
+
+ Push or insert an element to the top of the stack
+ Pop or remove an element from top of the stack
+
+"Elements of a Stack are stored in a python list"
+
+Stack -> push algorithm
+
+push(data):
+1. Check whether the stack is full. If full, display appropriate message
+2. If not,
+   a. increment top by one
+   b. Add the element at top position in the elements array
+
+
+pop:
+1. Check whether the stack is empty. If empty, display appropriate message
+2. If not,
+   a. Retrieve data at the top of the stack
+   b. Decrement top by 1
+   c. Return the retrieved data
+
+Queue
+Operations possible on the queue are:
+
+En-queue or add an element to the end of the queue
+
+De-queue or remove an element from the front of the queue
+
+enqueue (data):
+1. Check whether queue is full. If full, display appropriate message
+2. If not,
+   a. increment rear by one
+   b. Add the element at rear position in the elements array
+dequeue()
+1. Check whether the queue is empty. If it is empty, display appropriate message
+2. If not,
+   a. Retrieve data at the front of the queue
+   b. Increment front by 1
+   c. Return the retrieved data
+
+NEtworking -> Non Linear Data Structures
+In these scenarios, we understand that we cannot use any of the linear data structures like array, linked list, stack or queue to represent it. Here, we need an arrangement which allows to have a set of vertices and edges between them. Such a data structure is known as graph. 
+
+Graph is a non-linear data structure having a set of vertices(or nodes) and edges between vertices. It can have any number of edges and nodes and any node can be connected to any other node by an edge. It can be implemented using arrays or linked lists.
+
+Tree !
+
+Scenario-1:
+
+Maria is preparing her family tree. She has her grandfather as the head of the family. Her grandfather has three sons and one daughter. Her aunt and uncles have one son and one daughter each. Maria is the only child of her father.
+
+Scenario-2: 
+
+Peter who has become the head of his team is preparing the organization structure. He has two senior managers reporting into him. To each of the senior managers, there are two managers reporting and to each of the managers, there are again two software engineers reporting.
+
+This type of non-linear arrangement where a node is attached to one or more nodes directly beneath it, is a special type of graph known as tree. In this data structure, the top most node is called the root and the connections between nodes are called edges. Nodes that have no children are called leaf nodes and non-root and non-leaf nodes are called internal nodes.
+Trees are used extensively in searching and sorting applications.
+
+
+In Most OS, folders, their sub folders and file indexes are organized in a tree Data Structure. Each node is a Directory/sub-directory and each leaf is a file

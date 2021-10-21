@@ -1,0 +1,89 @@
+1)List using Array.
+Maria wants to go to shopping and she has a list in her hand. as she moves from one section to other, the items in the list is increased or decreased. that is, she adds a few items or removes a few items from the list. Thus this example can be implemented by Lists using Arrays
+
+When we lookup for employees by keying his/her name in a dictionary of an organization,it retrieves the object of all the employee details who have the keyed name in it and stores it in a list before displaying it.
+2)List using Linked List
+As Maria's list is going to have frequent additions and deletions, it may not be a good choice to implement it using arrays. 
+There is one more implementation for list which is using Linked List. Let's explore list using linked list.
+
+3)Stack
+Maria is arranging the shirts of Peter one on top of the other in the cupboard. She is very particular that Peter should always wear the shirt at the top
+Maria needs your help to arrange the shirts one on top of the other in the cupboard and she wants Peter to always take the shirt on top of the pile.
+ 	This pile of shirts arranged one on top of the other which follows Last-In-First-Out (LIFO) principle is known as Stack.
+ 	
+     Operations possible on the stack are:
+
+ Push or insert an element to the top of the stack
+ Pop or remove an element from top of the stack
+
+Stack is the Data Structure used in Bracket Matching Algorithm!!
+Clipboard in Windows Makes use of Stack to implement undo-redo operations!
+
+
+4)Queue
+Peter and Maria went for a movie one day. In the multiplex, the tickets were issued on first-come-first-serve basis and people were standing behind each other waiting for their turn. So they went to the back and stood behind the last person waiting for the ticket.
+
+Maria is waiting for her turn to buy the movie tickets in the multiplex. She is trying to understand how this First-in-First-Out system is working. Let’s see whether we can help her understand it.
+
+ 
+
+	 	
+Here, the people are standing one behind the other and they are serviced based on First-In-First-Out (FIFO) mechanism. Such an arrangement is known as Queue.
+
+ 
+
+ 	
+Operations possible on the queue are:
+
+En-queue or add an element to the end of the queue
+
+De-queue or remove an element from the front of the queue
+
+Print Queue in Windows OS makes use of Queue Data Structure
+
+
+Non-Linear Data Structures
+Scenario-1:
+
+The network engineers of a company are trying to connect all the computers (numbered 1 to 9) in the company network. They also need to provide a path to traverse from one computer to the other.
+
+Scenario-2: 
+
+
+Maria is planning a vacation trip to Europe and is trying to choose the best air route from the available options based on the travel time in hrs.
+Option-1: Bangalore(4hrs) -> Dubai(7hrs)-> Paris(1hr)-> London
+Option-2: Bangalore(3hrs)->Delhi(8hrs)->Frankfurt(2hrs)->London
+Option-3: Bangalore(4hrs)->Dubai(7hrs)->London
+
+In these scenarios, we understand that we cannot use any of the linear data structures like array, linked list, stack or queue to represent it. Here, we need an arrangement which allows to have a set of vertices and edges between them. Such a data structure is known as graph. 
+
+Graph is a non-linear data structure having a set of vertices(or nodes) and edges between vertices. It can have any number of edges and nodes and any node can be connected to any other node by an edge. It can be implemented using arrays or linked lists.
+
+Listed below are two common usage scenarios of graphs:
+
+1. Find the shortest path where path is defined as a sequence of edges which connect a sequence of vertices . Shortest path is used in a weighted graph to find the path that results in the shortest path from a source node to a destination node. It is used to find shortest routes, profitable routes etc.
+
+2. Detect a cycle in a graph. Cycle consists of a sequence of vertices starting and ending at the same vertex with no repetitions of vertices and edges other than the starting and ending vertex.
+
+
+Looking ahead
+
+Google Maps uses weighted graph to represent a map where each node is a city, edge is a road connecting  two cities and weight can be the distance between the two cities.
+
+Looking ahead
+
+Facebook uses directed graph to represent people and their relationships where each node represents a person/activity and edge represents the relationships between two people (liked by, tagged by, friend of etc.)
+
+
+Tree!
+
+Scenario-1:
+
+Maria is preparing her family tree. She has her grandfather as the head of the family. Her grandfather has three sons and one daughter. Her aunt and uncles have one son and one daughter each. Maria is the only child of her father.
+
+Scenario-2: 
+
+Peter who has become the head of his team is preparing the organization structure. He has two senior managers reporting into him. To each of the senior managers, there are two managers reporting and to each of the managers, there are again two software engineers reporting.
+
+
+In Most OS, folders, their sub folders and file indexes are organized in a tree Data Structure. Each node is a Directory/sub-directory and each leaf is a file
