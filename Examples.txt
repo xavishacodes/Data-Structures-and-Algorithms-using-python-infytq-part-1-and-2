@@ -87,3 +87,11 @@ Peter who has become the head of his team is preparing the organization structur
 
 
 In Most OS, folders, their sub folders and file indexes are organized in a tree Data Structure. Each node is a Directory/sub-directory and each leaf is a file
+
+
+DATA STRUCTURES _ PART 2
+
+suppose a bank wants to store the details of 1 million customers with the customer name as the primary key. the customer name followed by the corresponding account number is set to be the 
+primary key for each customer. now to search for a particular customer, 
+The search will involve character by character searching of each customer name followed by the 11 digit account number. i.e. 26 possibilities for each character of a variable length string followed by 10 possibilities for each of the 11 digits.
+In these kind of situations, hashing can be used to arrive at a fixed length shorter hash value from the key. Searching a fixed length shorter hash value is definitely much faster than searching for the original key value.

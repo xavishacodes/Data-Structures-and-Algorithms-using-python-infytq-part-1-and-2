@@ -172,3 +172,122 @@ Trees are used extensively in searching and sorting applications.
 
 
 In Most OS, folders, their sub folders and file indexes are organized in a tree Data Structure. Each node is a Directory/sub-directory and each leaf is a file
+
+PART 2
+Hashing and Hash Table
+
+suppose a bank wants to store the details of 1 million customers with the customer name as the primary key. the customer name followed by the corresponding account number is set to be the 
+primary key for each customer. now to search for a particular customer, 
+The search will involve character by character searching of each customer name followed by the 11 digit account number. i.e. 26 possibilities for each character of a variable length string followed by 10 possibilities for each of the 11 digits.
+In these kind of situations, hashing can be used to arrive at a fixed length shorter hash value from the key. Searching a fixed length shorter hash value is definitely much faster than searching for the original key value.
+Hashing is the process of transforming a set of characters (key) into a shorter fixed length integer value. This shorter fixed length integer value which represents the original set of characters (key) is known as hash value or hash. A hash function will be used to generate the hash value from the original set of characters (key). Various algorithms may be used to arrive at the hash function.
+
+Suppose we have a key-value pair as shown below. Here key is the three letter abbreviation of country names and value is the corresponding country name.  
+
+Input(Key)
+
+Value
+
+ISR	Israel
+PER	Peru
+IND	India
+FJI	Fiji
+CAN	Canada
+
+Hash values corresponding to each key can be generated as shown below:
+
+Key(Input)	Value	Hash(Output)
+ISR	Israel	
+(ord("I")+ord("S")+ ord("R"))%5
+
+ (73+83+82)%5	238%5	3
+PER	Peru	
+(ord("P")+ ord("E") + ord("R"))%5
+
+(80+69+82)%5	231%5	1
+IND	India	
+(ord("I")+ord("N")+ ord("D"))%5
+
+(73+78+68)%5	219%5	4
+FJI	Fiji	
+(ord("F")+ord("J") +ord("I"))%5
+
+(70+74+73)%5	217%5	2
+CAN	Canada	
+(ord("C")+ord("A") +ord("N"))%5
+
+(67+65+78)%5	210%5	0
+               
+
+Points to Note:
+
+Hash function will always generate the same hash value (output) for a given key (input).
+Keys have to be unique.
+A given key will have only one value in the key-value pair.
+
+
+Key(Input)
+
+Value
+
+Hash(Output)
+
+ISR	Israel	(ord("I")+ord("S")+ ord("R"))%5	(73+83+82)%5	238%5	3
+PER	Peru	
+(ord("P")+ ord("E") + ord("R"))%5
+
+(80+69+82)%5	231%5	1
+IND	India	
+(ord("I")+ord("N")+ ord("D"))%5
+
+(73+78+68)%5	219%5	4
+FJI	Fiji 	(ord("F")+ord("J") +ord("I"))%5	
+(70+74+73)%5
+
+217%5	2
+CAN	Canada	(ord("C")+ord("A") +ord("N"))%5	(67+65+78)%5	210%5	0
+SWE	Sweden	(ord("S")+ord("W") +ord("E"))%5	(83+87+69)%5	239%5	4
+ 
+Two keys (IND and SWE) have generated the same hash value. That means hash function may compute same hash value for multiple keys and this is known as collision in hashing. This occurs because the number of possibilities in input (key) is much greater than the number of possibilities in the output (hash value).
+
+In this example, three letter abbreviation exists for all the countries in the world whereas the hash value can be only between 0 – 4.
+
+Collisions are inevitable, however number of collisions depends on the goodness of the hash function.
+
+hash function may compute same hash value for multiple keys resulting in collision.
+
+Let’s understand how this is handled.
+
+One of the techniques that can be used for handling collision is known as separate chaining. In this case, instead of hash table containing a reference to one value, it will maintain a reference to a linked list. When more than one key maps to the same hash, its values are added as nodes to the corresponding linked list.
+
+Observe the linked list maintained for each hash and how values are stored in case of collision (IND,SWE).
+
+Operations possible on the hash table are put() and get().
+
+put(): This operation is used to put a key-value pair into the hash table based on the key and the hash.
+
+Identify the hash by applying the hash function on the given key
+Locate the hash in the hash table
+Create a new node with the given key-value pair to be linked to the hash
+Traverse through the linked list corresponding to the hash until its end
+Place the new node as the last node of the linked list
+
+get(): This operation is used to retrieve a value based on its key and hash.
+
+Algorithm Steps:
+Identify the hash by applying the hash function on the given key
+Locate the hash in the hash table
+Search its corresponding linked list for a node with the given key
+When found, return its corresponding value
+If a node with key is not found, display "Node not found" and return
+
+
+Rarely is one data structure better than another in all situations. All the data structures require space for each data item it stores, time to perform each basic operation and also involves programming effort. Only after a careful analysis of the problem, we will be able to determine which is the most suited data structure for a task.
+
+The strategy used to arrive at a solution is an algorithm and it greatly determines the capability and effectiveness of a program.
+
+Just like for fibonacci, there are some common algorithms and techniques which we can use while solving problems. In the next chapters, we’ll be learning a few of them. 
+
+linear search algorithm. It's one of the simplest search algorithms which searches through a list of elements in a sequential manner starting from the first element in the list. The technique used in this algorithm is known as Brute-Force.
+
+ Brute-Force is a trial and error technique in which we keep trying through all the possibilities until the solution is found or until we have exhausted all the possibilities.
