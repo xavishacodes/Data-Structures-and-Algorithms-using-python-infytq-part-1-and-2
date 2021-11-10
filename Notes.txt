@@ -291,3 +291,150 @@ Just like for fibonacci, there are some common algorithms and techniques which w
 linear search algorithm. It's one of the simplest search algorithms which searches through a list of elements in a sequential manner starting from the first element in the list. The technique used in this algorithm is known as Brute-Force.
 
  Brute-Force is a trial and error technique in which we keep trying through all the possibilities until the solution is found or until we have exhausted all the possibilities.
+
+
+This algorithm in which we repeatedly divide the list of elements into two halves and then focus on any one of those lists based on whether the element to be searched is greater than or less than the middle element of the list is known as the binary search algorithm.
+
+Sorting Techniques
+
+1)Selection Sort
+Assume that we have an unsorted list.
+
+Find the smallest number and swap it with the number at the first position in the list.
+Find the next smallest number and swap it with the number at the second position in the list.
+Find the next smallest number and swap it with the number at the third position in the list.
+Continue doing it until you are done with the number at the last position in the list.
+This strategy of sorting is known as Selection Sort. Like linear search, technique followed here is also Brute-Force.
+
+It is so called because it selects the smallest/largest element in the list and swaps it with the element at the first position, then selects the next smallest/largest element in the list and swaps it with the element at the second position and so on until it is done with the number at last position in the list.
+
+
+Selection Sort will take n passes to complete sorting n elements. Hence it'll not be ideal in every situation
+
+Bubble Sort
+
+Initialize n as number of elements in the list
+for (var1=0, var1<var2-1, var1=var1+1)
+     a. Initialize swapped as False
+     b. for (var3=0, var3<var2-var1-1, var3=var3+1)
+          i. if list[var3] > list[var3+1] then
+          Swap the elements at positions var3 and var3+1
+          Change the value of swapped to True
+     c. if (swapped==False) then break
+
+ This strategy of sorting is known as Bubble Sort. Like selection sort, technique followed here is also Brute-Force.
+
+To sort n elements, selection sort will always go through n-1 passes. Whereas bubble sort stops iterating when it identifies that the list is sorted.
+
+There is another sorting algorithm which may allow us to arrange these numbers faster than selection and bubble sort algorithms!
+
+Let's explore that algorithm. It is called Merge Sort and works well when the number of elements to be sorted is more.
+
+The strategy used in this algorithm is as follows:
+
+Repeatedly divide the input unsorted list into sub-lists, such that each sublist contains only one element.
+
+Repeatedly merge the sub lists to produce new sorted sub lists until there is only one sublist remaining.
+
+ Here is the algorithm for Merge Sort.
+
+Merge_Sort(list)
+
+1. Initialize low as 0 (i.e., start index of the list)
+
+2. Initialize high as the last index of the list
+
+3. If low==high then return list
+
+4. Else
+
+   a.Divide the list into two halves,left list and right list
+
+   b. Invoke Merge_Sort() by passing left list
+
+   c. Invoke Merge_Sort() by passing right list
+
+   d. Invoke Merge() by passing the lists returned in step 4b         and 4c respectively
+
+   e. Return the sorted list which is returned in step 4d
+
+           	
+Merge(left_list, right_list)
+
+1. Initialize i, j as 0
+
+2. Create an empty sorted_list
+
+3. While((i < number of elements in left list ) and (j < number of elements in right list) do
+
+    a. If(left_list[i]<=right_list[j]) then append left_list[i] to      the sorted_list and increment i
+
+    b. Else append right_list[j] to sorted_list and increment j
+
+4. If there are any elements left in left_list, append it to      sorted_list
+
+5. If there are any elements left in right_list, append it to sorted_list
+
+6. Return the sorted_list
+
+The technique used in merge sort algorithm is known as Divide and Conquer.
+
+In divide and conquer, we solve a problem by dividing it into independent sub-problems which are solved independently and combined to get the overall solution.
+
+Memory consumption of merge sort is high,
+Yes, it requires more memory as it divides the elements in the input list into separate right half and left half lists. This is recursively done until there is only one element left in the lists.
+
+So for each right half and left half lists, separate memory is required.
+
+
+Quick Sort works by picking an element in the input list as pivot and partitioning the list around the pivot. Partitioning is done such that
+
+    - the pivot is placed at its correct position in the list,
+
+    - elements less than pivot are placed in the left partition and
+
+    - elements greater than the pivot are kept in the right partition.
+
+This is repeatedly done for each partition until all pivots are correctly placed in the list.
+The detailed algorithm is as follows:
+
+Quick_Sort(list, low, high):
+If low>=high then return
+p=Partition(list, low, high)
+Invoke Quick_Sort() by passing list, low and p-1
+Invoke Quick_Sort() by passing list, p+1, high
+
+Partition(list, low, high):
+
+Choose the element at position low as the pivot
+Initialize i as low+1 and j as high
+Initialize done as False
+While not done do
+  a. While (i<=j) and list[i]<=pivot) do increment i by 1
+  b. While (j>=i) and list[j]>=pivot) do decrement j by 1
+  c. If (j < i) then change the value of done to true
+  d. Else swap the elements at position i and j
+Swap the elements at position j and low
+Return the partition point, j
+
+In the quick sort algorithm we implemented, we have considered pivot as the first element.
+
+However, pivot can also be:
+
+    - A random element in the list.
+
+    - First, middle or the last element in the list
+
+    - Median of first, middle and last element values in the list (“median-of-three”)
+
+Sorting algorithms can also be fun.
+
+What to observe?
+
+Sound is generated only when two values are compared.
+
+The frequency of the sound is based on the values compared.
+
+The patterns in sound density.
+
+How order is formed from chaos!
